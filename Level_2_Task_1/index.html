@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator - By Shreyashee Roy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="left-content">
+        <div>
+            <h1 class="calculator">Hello, It's Me</h1>
+        </div>
+        <div class="orange">
+            <h1><span id="element"></span></h1>
+        </div>
+        <div>
+            <h1 class="calculator">Made By - Shreyashee Roy</h1>
+        </div>
+    </div>
+
+    <div class="right-content">
+        <input type="text" placeholder="0" id="inputBox">
+        <div>
+            <button class="operator">AC</button>
+            <button class="operator">DEL</button>
+            <button class="operator">%</button>
+            <button class="operator">/</button>
+        </div>
+
+        <div>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">*</button>
+        </div>
+
+        <div>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">-</button>
+        </div>
+
+        <div>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">+</button>
+        </div>
+
+        <div>
+            <button>00</button>
+            <button>0</button>
+            <button>.</button>
+            <button class="equalToBtn">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Calculator'],
+          typeSpeed: 50,
+        });
+    </script>
+</body>
+</html>
