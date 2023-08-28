@@ -21,6 +21,12 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.left-content p {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+}
+
 .orange {
     
     font-size: xx-large;
@@ -43,7 +49,7 @@ input{
     padding: 24px;
     margin: 10px;
     background: transparent;
-    box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.5);
+    box-shadow: 0px 3px 15px rgba(214, 213, 213, 0.92);
     font-size: 40px;
     text-align: right;
     cursor: pointer;
@@ -75,5 +81,6 @@ button{
 }
 
 .operator{
-    color: rgb(53, 247, 53);
+    color: rgb(247, 250, 247);
+    background-color: #717377;
 }

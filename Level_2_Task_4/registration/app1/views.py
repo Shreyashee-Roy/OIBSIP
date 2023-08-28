@@ -1,28 +1,37 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.models import User
+from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
-from django.contrib.auth.decorators import login_required
 
-@login_required(login_url="login")
+def IntroPage(request):
+    return render(request, 'intro.html')
+
 def HomePage(request):
-    return render(request, 'home.html')
+    if request.user.is_authenticated == True:
+    	return render(request, 'home.html')
+    else:
+        return render(request, 'login.html')
 
 def SignupPage(request):
-    if request.method=='POST':
-      uname=request.POST.get('username')
-      email=request.POST.get('email')
-      pass1=request.POST.get('password1')
-      pass2=request.POST.get('password2')
+    if request.method == "POST":
+        uname = request.POST.get("username")
+        email = request.POST.get("email")
+        pass1 = request.POST.get("password1")
+        pass2 = request.POST.get("password2")
 
-      if pass1!=pass2:
-         return HttpResponse("Password mismatched!!")
-      else: 
-        my_user=User.objects.create_user(uname,email,pass1)
-        my_user.save()
-        return redirect('login')
-      
+        if User.objects.filter(email=email).exists():
+            messages.info(request, "Email already exists !!")
+            return redirect("signup")
+        elif pass1 != pass2 :
+            messages.info(request, "Confirm Password doesn't Match")
+            return redirect("signup")
+        else:
+            my_user=User.objects.create_user(uname,email,pass1)
+            my_user.save()
+            return redirect('login')
+    
+    return render(request, "signup.html")
 
-    return render(request, 'signup.html')
 
 def LoginPage(request):
     if request.method=='POST':
@@ -34,10 +43,10 @@ def LoginPage(request):
           login(request,user)
           return redirect('home')
        else:
-          return HttpResponse("Username or Password is incorrect!!")
+          messages.info(request, "Invalid Credentials !!")
 
     return render(request, 'login.html')
 
 def LogoutPage(request):
    logout(request)
-   return redirect('login')
+   return redirect('intro')

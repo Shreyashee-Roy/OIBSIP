@@ -1,26 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 body{
-	height: 100vh;
-	background: #03dfff;
-	background: linear-gradient(139deg,#03ddffcb 0%,#ff0381b6 90%);
+	background: url("https://static.vecteezy.com/system/resources/previews/002/755/487/non_2x/celebration-of-literacy-background-free-vector.jpg") no-repeat;
+	background-size: cover;
+  	background-position: center;
+  	background-attachment: fixed;
+  	margin: 0;
 }
-.container{
-	position: relative;
-	max-width: 800px;
-	padding: 10px;
-	margin: 50px auto;
+
+.main-container {
+	background: rgba(192, 188, 188, 0.4);
+	display: flex;
+  	flex-direction: column;
+  	min-height: 100vh;
 }
+
 .addTask{
 	width: 100%;
 	display: flex;
-	padding: 10px 0;
+	padding-left: 530px;
+	padding-top: 60px;
 }
 .addTask > input[type="text"]{
-	width: 90%;
+	width: 50%;
 	color: #333;
 	border:none;
 	border-bottom: 2px solid #666;
@@ -31,7 +38,7 @@ body{
 }
 .addTask button{
 	margin: 0 10px;
-	background: #222;
+	background: #0a0a0a;
 	color: #fff;
 	font-size: 18px;
 	text-transform: uppercase;
@@ -45,11 +52,22 @@ body{
 	margin: 5px 0;
 	padding: 20px;
 }
+
+.completed {
+	text-decoration: line-through;
+	background-color: #00ff62; 
+  }
+  
+  .completed ol.Completed {
+	display: block; 
+  }
+
 h3{
+	font-family: "Poppins", sans-serif;
 	font-size: 28px;
 	text-transform: uppercase;
 	text-align: center;
-	color: #fff;
+	color: #330d87;
 }
 ol{
 	list-style: none;
@@ -89,3 +107,33 @@ li button{
 	outline: none;
 	cursor: pointer;
 }
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	margin: 10px;
+  }
+  
+  .box {
+	background-color: rgba(49, 50, 51, 0.2);
+	border-radius: 10px;
+	padding: 20px;
+	backdrop-filter: blur(10px);
+  }
+  
+  .task-container, .completed-container {
+	width: 48%; 
+  }
+  
+  .addTask {
+	clear: both;
+  }
+
+  footer {
+	background-color: #420d82;
+	color: #fff;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+  }

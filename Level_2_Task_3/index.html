@@ -4,23 +4,32 @@
   <meta charset="UTF-8">
   <title>To-Do List - By Shreyashee Roy</title>
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-	<div class="container">
+	<div class="main-container">
 		<div class="addTask">
 			<input type="text" placeholder="Add a Task">
 			<button>Add</button>
 		</div>
-
-		<ol class="notCompleted">
-			<h3>Not Completed</h3>
-		</ol>
-
-		<ol class="Completed">
-			<h3>Completed</h3>
-		</ol>
+		<div class="container">
+			<div class="box task-container">
+			  <h3>Task List</h3>
+			  <ol class="notCompleted"></ol>
+			</div>
+			<div class="box completed-container">
+			  <h3>Completed Tasks</h3>
+			  <ol class="Completed"></ol>
+			</div>
+		</div>
 	</div>
-    <script src="script.js"></script>
+
+	<div class="bottom-container">
+		<footer>
+		  <p>Made by Shreyashee Roy for Oasis Infobyte Web Development Internship</p>
+		</footer>
+	</div>
+  <script src="script.js"></script>
 </body>
 </html>
